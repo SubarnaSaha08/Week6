@@ -58,4 +58,42 @@ class PrimeChecker:
 
 
 if __name__ == "__main__":
-    pass
+    """
+    Main function for the PrimeChecker class.
+    This class takes manual input from the user.
+
+    The program prompts the user to enter an integer.
+    This integer is checked to determine
+    if it is a prime number using the `PrimeChecker` class.
+
+    Workflow:
+    ---------
+    1. The user is prompted to enter a number.
+    2. The number is converted to an integer.
+    3. Then, the number is passed to the `PrimeChecker` class.
+    3. The `is_prime()` method is called to determine
+        whether the number is prime.
+    4. The result is printed to the console.
+    5. If the number entered is less than or equal to 1,
+        a `ValueError` is raised with the message
+        "Prime numbers must be greater than 1."
+
+    Input:
+    ------
+    - An integer from the user.
+
+    Exceptions:
+    -----------
+    ValueError:
+        Raised if the user enters a number less than or
+        equal to 1 or an invalid input.
+    """
+    try:
+        number = int(input("Enter a number to check if it's prime: "))
+        prime_checker = PrimeChecker(number)
+        if prime_checker.is_prime():
+            print(f"{number} is a prime number.")
+        else:
+            print(f"{number} is not a prime number.")
+    except ValueError as e:
+        print(e)
